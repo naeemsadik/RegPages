@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIU CSE Fest Registration</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3498db',
+                        secondary: '#2c3e50',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .step-active {
+            @apply bg-primary text-white;
+        }
+        .step-completed {
+            @apply bg-green-500 text-white;
+        }
+        .step-pending {
+            @apply bg-gray-300 text-gray-600;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-secondary text-white py-4 text-center">
+        <h1 class="text-xl font-bold">Welcome to UIU CSE Fest Registration Portal</h1>
+    </header>
+
+    <!-- Progress Steps -->
+    <div class="container mx-auto px-4 py-8">
+        <div class="flex justify-between items-center max-w-3xl mx-auto mb-12">
+            <div class="text-center">
+                <div class="step-active w-10 h-10 rounded-full flex items-center justify-center mb-2 mx-auto">1</div>
+                <p class="text-sm">Team and Team<br>Leader's Information</p>
+            </div>
+            <div class="flex-1 h-1 mx-2 bg-gray-300"></div>
+            <div class="text-center">
+                <div class="step-pending w-10 h-10 rounded-full flex items-center justify-center mb-2 mx-auto">2</div>
+                <p class="text-sm">Team Members<br>Information</p>
+            </div>
+            <div class="flex-1 h-1 mx-2 bg-gray-300"></div>
+            <div class="text-center">
+                <div class="step-pending w-10 h-10 rounded-full flex items-center justify-center mb-2 mx-auto">3</div>
+                <p class="text-sm">Payment</p>
+            </div>
+        </div>
+
+        <!-- Registration Form -->
+        <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold mb-6 text-secondary">Team Information</h2>
+            <form action="members.html" class="space-y-6">
+                <div>
+                    <label for="team-name" class="block text-sm font-medium text-gray-700 mb-1">Team Name:</label>
+                    <input type="text" id="team-name" name="team-name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                </div>
+
+                <div>
+                    <label for="competition" class="block text-sm font-medium text-gray-700 mb-1">Competition:</label>
+                    <select id="competition" name="competition" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        <option>Inter University Programming Contest</option>
+                    </select>
+                </div>
+
+                <h2 class="text-2xl font-bold pt-4 text-secondary">Team Leader's Information</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="leader-name" class="block text-sm font-medium text-gray-700 mb-1">Name:</label>
+                        <input type="text" id="leader-name" name="leader-name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="leader-university" class="block text-sm font-medium text-gray-700 mb-1">University:</label>
+                        <select id="leader-university" name="leader-university" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            <option>United International University (UIU)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="leader-email" class="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+                        <input type="email" id="leader-email" name="leader-email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                    </div>
+                    <div>
+                        <label for="leader-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number:</label>
+                        <input type="tel" id="leader-phone" name="leader-phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                    </div>
+                </div>
+
+                <div>
+                    <label for="leader-photo" class="block text-sm font-medium text-gray-700 mb-1">Photo:</label>
+                    <input type="file" id="leader-photo" name="leader-photo" accept="image/*" required class="w-full">
+                </div>
+
+                <div>
+                    <label for="leader-id-card" class="block text-sm font-medium text-gray-700 mb-1">Student ID Card:</label>
+                    <input type="file" id="leader-id-card" name="leader-id-card" accept="image/*" required class="w-full">
+                </div>
+
+                <div class="flex justify-end">
+                    <button type="submit" class="bg-primary text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                        Next >
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
