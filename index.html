@@ -8,15 +8,18 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .step-active {
-            @apply bg-primary text-white;
+            background-color: #3490dc; /* Replace with your primary color */
+            color: white;
         }
 
         .step-completed {
-            @apply bg-green-500 text-white;
+            background-color: #48bb78; /* Tailwind green-500 */
+            color: white;
         }
 
         .step-pending {
-            @apply bg-gray-300 text-gray-600;
+            background-color: #e2e8f0; /* Tailwind gray-300 */
+            color: #718096; /* Tailwind gray-600 */
         }
     </style>
 </head>
@@ -26,7 +29,7 @@
     <header class="bg-[#000] text-white py-4 text-center">
         <div class="flex items-center justify-center space-x-4">
             <img src="Assets/Logo/logo.png" alt="UIU CSE Fest" class="h-12">
-            <h1 class="text-xl font-bold">Welcome to UIU CSE Fest Registration Portal</h1>
+            <h1 class="text-xl font-bold">UIU CSE Fest Registration Portal</h1>
         </div>
     </header>
 
