@@ -75,7 +75,13 @@
                     <label for="competition" class="block text-sm font-medium text-gray-700 mb-1">Competition:</label>
                     <select id="competition" name="competition"
                         class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        <option disabled selected>Select your competition</option>
                         <option>Inter University Programming Contest</option>
+                        <option>Blockchain Olympiad</option>
+                        <option>ICT Olympiad</option>
+                        <option>Project Showcase</option>
+                        <option>Line Following Robot</option>
+                        <option>Robo Soccer</option>
                     </select>
                 </div>
 
@@ -92,6 +98,7 @@
                             class="block text-sm font-medium text-gray-700 mb-1">University:</label>
                         <select id="leader-university" name="leader-university"
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            <option disabled selected>Select your university</option>
                             <option>United International University (UIU)</option>
                             <option>North South University (NSU)</option>
                             <option>Bangladesh University of Engineering and Technology (BUET)</option>
@@ -132,60 +139,60 @@
         </div>
     </div>
 
- <!-- Footer -->
-<footer class="bg-[#ff4701] text-white py-8">
-    <div class="container mx-auto px-4">
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-            <!-- Event Organizers Section -->
-            <div class="text-center">
-                <h1 class="font-general text-xs sm:text-sm md:text-xs lg:text-xs">UIU CSE FEST</h1>
-                <h1 class="bento-title special-font text-4xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
-                    <b>Event Organizers</b>
-                </h1>
-                <div class="mt-4">
-                    <h2 class="text-xs sm:text-sm md:text-sm lg:text-xs">Organized By</h2>
-                    <div class="flex flex-wrap justify-center items-center gap-3 mt-2">
-                        <img src="Assets/Logo/UIU_logo.png" class="w-16 sm:w-24 md:w-32 lg:w-36" alt="Logo 1">
-                        <img src="Assets/Logo/UIU_cse_logo.png" class="w-16 sm:w-24 md:w-32 lg:w-36" alt="Logo 2">
+    <!-- Footer -->
+    <footer class="bg-[#ff4701] text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                <!-- Fest Logo Section -->
+                <div class="flex justify-center items-center">
+                    <img src="Assets/Logo/Fest_logo_1.png" alt="UIU CSE Fest Logo" class="w-48 sm:w-60 md:w-72 lg:w-80">
+                </div>
+
+                <!-- Event Organizers Section -->
+                <div class="text-center">
+                    <h1 class="font-general text-xs sm:text-sm md:text-xs lg:text-xs">UIU CSE FEST</h1>
+                    <h1 class="bento-title special-font text-4xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
+                        <b>Event Organizers</b>
+                    </h1>
+                    <div class="mt-4">
+                        <h2 class="text-xs sm:text-sm md:text-sm lg:text-xs">Organized By</h2>
+                        <div class="flex flex-wrap justify-center items-center gap-3 mt-2">
+                            <img src="Assets/Logo/UIU_logo.png" class="w-16 sm:w-24 md:w-32 lg:w-36" alt="Logo 1">
+                            <img src="Assets/Logo/UIU_cse_logo.png" class="w-16 sm:w-24 md:w-32 lg:w-36" alt="Logo 2">
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <h2 class="text-xs sm:text-sm md:text-sm lg:text-xs">Powered By</h2>
+                        <div class="flex flex-wrap justify-center items-center gap-4 mt-2">
+                            <img src="Assets/Logo/1.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 1">
+                            <img src="Assets/Logo/2.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 2">
+                            <img src="Assets/Logo/3.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 3">
+                        </div>
                     </div>
                 </div>
-                <div class="mt-4">
-                    <h2 class="text-xs sm:text-sm md:text-sm lg:text-xs">Powered By</h2>
-                    <div class="flex flex-wrap justify-center items-center gap-4 mt-2">
-                        <img src="Assets/Logo/1.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 1">
-                        <img src="Assets/Logo/2.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 2">
-                        <img src="Assets/Logo/3.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 3">
-                    </div>
+
+                <!-- Contact Information Section -->
+                <div class="text-center">
+                    <h3 class="text-xl font-bold mb-4">For Any Queries Contact Us</h3>
+                    <p class="text-sm">United International University</p>
+                    <p class="text-sm">United City, Madani Avenue, Badda, Dhaka 1212</p>
+                    <p class="text-sm">Tel: +88 09604 UIU UIU (848 848)</p>
+                    <p class="text-sm">Email: csefest@uiu.ac.bd</p>
                 </div>
             </div>
 
-            <!-- Fest Logo Section -->
-            <div class="flex justify-center items-center">
-                <img src="Assets/Logo/Fest_logo_1.png" alt="UIU CSE Fest Logo" class="w-48 sm:w-60 md:w-72 lg:w-80">
+            <!-- Footer Bottom Section -->
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
+                <p>&copy; <span id="current-year"></span> UIU CSE Fest. All rights reserved.</p>
             </div>
-
-            <!-- Contact Information Section -->
-            <div class="text-center">
-                <h3 class="text-xl font-bold mb-4">For Any Queries Contact Us</h3>
-                <p class="text-sm">United International University</p>
-                <p class="text-sm">United City, Madani Avenue, Badda, Dhaka 1212</p>
-                <p class="text-sm">Tel: +88 09604 UIU UIU (848 848)</p>
-                <p class="text-sm">Email: csefest@uiu.ac.bd</p>
-            </div>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    const yearSpan = document.getElementById('current-year');
+                    yearSpan.textContent = new Date().getFullYear();
+                });
+            </script>
         </div>
-
-        <!-- Footer Bottom Section -->
-        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
-            <p>&copy; <span id="current-year"></span> UIU CSE Fest. All rights reserved.</p>
-        </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const yearSpan = document.getElementById('current-year');
-                yearSpan.textContent = new Date().getFullYear();
-            });
-        </script>
-    </div>
-</footer>
+    </footer>
 
 </body>
 
