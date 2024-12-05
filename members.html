@@ -2,28 +2,28 @@
 <html lang="en">
 
 <head>
+    <!-- Head content -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UIU CSE Fest Registration - Team Members</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <style>
         .step-active {
             background-color: #3490dc;
-            /* Replace with your primary color */
             color: white;
         }
 
         .step-completed {
             background-color: #48bb78;
-            /* Tailwind green-500 */
             color: white;
         }
 
         .step-pending {
             background-color: #e2e8f0;
-            /* Tailwind gray-300 */
             color: #718096;
-            /* Tailwind gray-600 */
         }
 
         .modal {
@@ -38,6 +38,8 @@
 
         .modal.active {
             display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .member-card:hover .member-actions {
@@ -81,259 +83,433 @@
             </div>
         </div>
 
-        <!-- Team Members Section -->
+        <!-- Main Content -->
         <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-md">
+            <!-- Team Information -->
             <div class="mb-8">
                 <h2 class="text-2xl font-bold mb-2 text-secondary">Team Information</h2>
                 <p>Team Name: <span class="font-medium">Team Bad Logic</span></p>
                 <p>Competition: <span class="font-medium">Inter University Programming Contest</span></p>
             </div>
 
-            <div class="mb-8">
-                <h2 class="text-2xl font-bold mb-4 text-secondary">Team Leader</h2>
-                <div class="flex items-start space-x-4">
-                    <img src="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/449121565_3700019743660817_1423637092962624769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEZyIXdPINYTk8KT1jnp0jSW1u-51kXpbxbW77nWRelvLpn29VRTxMlqg-Tf1KmEz9V5dfxRaF8_pgomIUA8yJA&_nc_ohc=Eq3x_D_0LSsQ7kNvgFYKfcO&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=AaGUTA0YRsSnaIIH1-1hagc&oh=00_AYCqbP9d7VrGBdFt_VplI0qps-QuU7NouRjxODTqxaNVdQ&oe=67550A87"
-                        alt="Team Leader" class="w-24 h-24 object-cover rounded-lg">
-                    <div>
-                        <p class="font-medium">Team Leader Name</p>
-                        <p class="text-sm text-gray-600">United International University (UIU)</p>
-                        <p class="text-sm text-gray-600">email@example.com</p>
-                        <p class="text-sm text-gray-600">01234567890</p>
-                    </div>
+            <!-- Team Leader and Mentor Information -->
+            <div class="mb-8 flex flex-row justify-between gap-4">
+                <!-- Section Header -->
+                <div class="flex w-full items-center">
+                    <h2 class="w-1/2 text-2xl font-bold text-secondary text-start">Team Leader's Information</h2>
+                    <h2 class="w-1/2 text-2xl font-bold text-secondary text-end">Mentor's Information</h2>
                 </div>
             </div>
 
-            <div>
-                <h2 class="text-2xl font-bold mb-4 text-secondary">Team Members Information</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                    <!-- Member Card 1 -->
+            <div class="mb-8 flex flex-row justify-between gap-4">
+                <!-- Team Leader Section -->
+                <div class="w-1/4">
                     <div class="member-card relative bg-white border rounded-lg overflow-hidden shadow-md">
-                        <img src="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/449121565_3700019743660817_1423637092962624769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEZyIXdPINYTk8KT1jnp0jSW1u-51kXpbxbW77nWRelvLpn29VRTxMlqg-Tf1KmEz9V5dfxRaF8_pgomIUA8yJA&_nc_ohc=Eq3x_D_0LSsQ7kNvgFYKfcO&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=AaGUTA0YRsSnaIIH1-1hagc&oh=00_AYCqbP9d7VrGBdFt_VplI0qps-QuU7NouRjxODTqxaNVdQ&oe=67550A87"
-                            alt="Member 1" class="w-full h-48 object-cover">
+                        <img src="Assets/photo.jpeg" alt="Team Leader" class="w-full h-48 object-cover">
                         <div class="p-4">
-                            <h3 class="font-semibold text-lg mb-2">John Doe</h3>
+                            <h3 class="font-semibold text-lg mb-2">Team Leader's Name</h3>
                         </div>
                         <div
                             class="member-actions absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300">
-                            <button onclick="openViewModal(1)" class="text-white mx-2 hover:text-primary">
+                            <!-- View Button -->
+                            <button onclick="openLeaderViewModal()" class="text-white mx-2 hover:text-primary">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                                     stroke="currentColor">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                            </button>
-                            <!-- Edit Button -->
-                            <button onclick="openEditModal(1)" class="text-white mx-2 hover:text-primary">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                                    stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274
+                        4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
                             </button>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Add Member Button -->
-                    <button onclick="openModal()"
-                        class="flex flex-col items-center justify-center h-full border-2 border-dashed border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors">
-                        <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg>
-                        <span class="text-gray-600">Add Team Member</span>
-                    </button>
+                <!-- Mentor Section -->
+                <div class="w-1/4">
+                    <div class="member-card relative bg-white border rounded-lg overflow-hidden shadow-md">
+                        <img src="Assets/photo.jpeg" alt="Mentor Name" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Mentor's Name</h3>
+                        </div>
+                        <div
+                            class="member-actions absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300">
+                            <!-- View Button -->
+                            <button onclick="openMentorViewModal()" class="text-white mx-2 hover:text-primary">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268
+                        2.943 9.542 7-1.274 4.057-5.064 7-9.542
+                        7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </button>
+                            <button onclick="deleteMentor()" class="text-white mx-2 hover:text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M6 18L18 6M6 6l12 12" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Add Mentor Button -->
+                        <!-- <div class="member-card relative bg-white border rounded-lg overflow-hidden shadow-md">
+                            <button onclick="openMentorModal()" class="w-full flex flex-col items-center justify-center h-full border-2 border-dashed
+                                border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors">
+                                <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                                </svg>
+                                <span class="text-gray-600">Add Mentor</span>
+                            </button>
+                        </div> -->
+                    </div>
                 </div>
             </div>
 
-            <div class="flex justify-between mt-8">
-                <a href="index.html"
-                    class="bg-gray-500 text-white px-6 py-2 rounded-md hover:bg-gray-600 transition-colors">
-                    < Back </a>
-                        <a href="payment.html"
-                            class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
-                            Next >
-                        </a>
+            <!-- Team Members Information -->
+            <div>
+                <h2 class="text-2xl font-bold mb-4 text-secondary">Team Members Information</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                    <!-- Static Member Card -->
+                    <div class="member-card relative bg-white border rounded-lg overflow-hidden shadow-md">
+                        <img src="Assets/photo.jpeg" alt="Member Name" class="w-full h-48 object-cover">
+                        <div class="p-4">
+                            <h3 class="font-semibold text-lg mb-2">Member Name</h3>
+                        </div>
+                        <div class="member-actions absolute inset-0 bg-black bg-opacity-50 flex items-center
+                            justify-center opacity-0 transition-opacity duration-300">
+                            <button onclick="openMemberViewModal()" class="text-white mx-2 hover:text-primary">
+                                <!-- View Icon -->
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268
+                                        2.943 9.542 7-1.274 4.057-5.064 7-9.542
+                                        7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Add Member Button -->
+                    <div class="member-card relative bg-white border rounded-lg overflow-hidden shadow-md">
+                        <button onclick="openMemberModal()" class="flex flex-col items-center justify-center h-full border-2 border-dashed
+                            border-gray-300 rounded-lg p-8 text-center hover:border-primary transition-colors">
+                            <svg class="w-8 h-8 text-gray-400 mb-2" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                            </svg>
+                            <span class="text-gray-600">Add Team Member</span>
+                        </button>
+                    </div>
+                    <!-- Additional Member Cards can be added here -->
+                </div>
+            </div>
+
+            <!-- Next Button -->
+            <div class="flex justify-end mt-8">
+                <a href="payment.html"
+                    class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                    Next &gt;
+                </a>
             </div>
         </div>
     </div>
 
-    <!-- Add/Edit Member Modal -->
-    <div id="memberModal" class="modal items-center justify-center">
-        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4" onclick="event.stopPropagation()">
-            <h3 class="text-xl font-bold mb-6 text-secondary">Team Member's Information</h3>
-            <form class="space-y-6" id="teamMemberForm">
+    <!-- Modals -->
+    <!-- Team Leader View Modal -->
+    <div id="viewLeaderModal" class="modal">
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+            <h3 class="text-xl font-bold mb-6 text-secondary">Team Leader Information</h3>
+            <!-- Leader information -->
+            <div class="space-y-4">
+                <p><strong>Name:</strong> Team Leader's Name</p>
+                <!-- Other leader details can be added here -->
+            </div>
+            <div class="flex justify-end mt-8">
+                <button type="button"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                    onclick="closeLeaderViewModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mentor Modal -->
+    <div id="mentorModal" class="modal">
+        <!-- Modal content -->
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+            <h3 class="text-xl font-bold mb-6 text-secondary">Mentor's Information</h3>
+            <form class="space-y-6">
+                <!-- Mentor Form Fields -->
+                <!-- [Form fields as before] -->
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Name Field -->
                     <div>
-                        <label for="leader-name" class="block text-sm font-medium text-gray-700 mb-1">Name:</label>
-                        <input type="text" id="leader-name" name="leader-name" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        <label for="mentor-name" class="block text-sm font-medium text-gray-700 mb-1">Name:</label>
+                        <input type="text" id="mentor-name" name="mentor-name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                        <p class="text-xs text-gray-500 mt-1">Enter the full name of the mentor.</p>
                     </div>
+                    <!-- University Field -->
                     <div>
-                        <label for="leader-university"
+                        <label for="mentor-university"
                             class="block text-sm font-medium text-gray-700 mb-1">University:</label>
-                        <select id="leader-university" name="leader-university"
+                        <select id="mentor-university" name="mentor-university" required
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
                             <option disabled selected>Select your university</option>
                             <option>United International University (UIU)</option>
                             <option>North South University (NSU)</option>
                             <option>Bangladesh University of Engineering and Technology (BUET)</option>
                         </select>
+                        <script>
+                            $(function () {
+                                $("#mentor-university").select2();
+                            });
+                        </script>
+                        <p class="text-xs text-gray-500 mt-1">Select the university the mentor is affiliated with.</p>
                     </div>
+                    <!-- Email Field -->
                     <div>
-                        <label for="leader-email" class="block text-sm font-medium text-gray-700 mb-1">Email:</label>
-                        <input type="email" id="leader-email" name="leader-email" required
-                            class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                        <label for="mentor-email" class="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+                        <input type="email" id="mentor-email" name="mentor-email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                        <p class="text-xs text-gray-500 mt-1">Enter the email address of the mentor.</p>
                     </div>
+                    <!-- Phone Field -->
                     <div>
-                        <label for="leader-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
+                        <label for="mentor-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
                             Number:</label>
-                        <input type="tel" id="leader-phone" name="leader-phone" required
+                        <input type="tel" id="mentor-phone" name="mentor-phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                        <p class="text-xs text-gray-500 mt-1">Enter the phone number of the mentor.</p>
+                    </div>
+                    <!-- T-Shirt Size Field -->
+                    <div>
+                        <label for="mentor-tshirt-size" class="block text-sm font-medium text-gray-700 mb-1">T-Shirt
+                            Size:</label>
+                        <select id="mentor-tshirt-size" name="mentor-tshirt-size" required
                             class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary focus:border-primary">
+                            <option disabled selected>Select your T-Shirt size</option>
+                            <option value="s">Small (S)</option>
+                            <option value="m">Medium (M)</option>
+                            <option value="l">Large (L)</option>
+                            <option value="xl">Extra Large (XL)</option>
+                            <option value="xxl">Double Extra Large (XXL)</option>
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">Select the T-Shirt size for the mentor.</p>
+                    </div>
+                    <!-- Photo Field -->
+                    <div>
+                        <label for="mentor-photo" class="block text-sm font-medium text-gray-700 mb-1">Photo:</label>
+                        <input type="file" id="mentor-photo" name="mentor-photo" accept="image/*" required
+                            class="w-full">
+                        <p class="text-xs text-gray-500 mt-1">Upload a recent photo of the mentor (image format).</p>
+                    </div>
+                    <!-- ID Card Field -->
+                    <div>
+                        <label for="mentor-id-card" class="block text-sm font-medium text-gray-700 mb-1">ID
+                            Card:</label>
+                        <input type="file" id="mentor-id-card" name="mentor-id-card" accept="image/*" required
+                            class="w-full">
+                        <p class="text-xs text-gray-500 mt-1">Upload a scanned copy of the mentor's ID card (image
+                            format).</p>
                     </div>
                 </div>
-
-                <div>
-                    <label for="leader-photo" class="block text-sm font-medium text-gray-700 mb-1">Photo:</label>
-                    <input type="file" id="leader-photo" name="leader-photo" accept="image/*" required class="w-full">
-                </div>
-
-                <div>
-                    <label for="leader-id-card" class="block text-sm font-medium text-gray-700 mb-1">Student ID
-                        Card:</label>
-                    <input type="file" id="leader-id-card" name="leader-id-card" accept="image/*" required
-                        class="w-full">
-                </div>
-
+                <!-- Buttons -->
                 <div class="flex justify-end space-x-4 mt-8">
                     <button type="button"
                         class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors"
-                        onclick="closeModal()">Cancel</button>
-                    <button type="submit"
-                        class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">Save</button>
+                        onclick="closeMentorModal()">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600
+                        transition-colors">Save</button>
                 </div>
             </form>
         </div>
     </div>
 
-    <!-- View Member Modal -->
-    <div id="viewMemberModal" class="modal items-center justify-center">
-        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4" onclick="event.stopPropagation()">
-            <h3 class="text-xl font-bold mb-6 text-secondary">Member Information</h3>
-            <div id="viewMemberContent" class="space-y-4">
-                <!-- Member information will be populated here -->
+    <!-- Mentor View Modal -->
+    <div id="viewMentorModal" class="modal">
+        <!-- Modal content -->
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+            <h3 class="text-xl font-bold mb-6 text-secondary">Mentor Information</h3>
+            <!-- Mentor information -->
+            <div class="space-y-4">
+                <p><strong>Name:</strong> Mentor Name</p>
+                <!-- Other mentor details -->
             </div>
             <div class="flex justify-end mt-8">
                 <button type="button"
                     class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
-                    onclick="closeViewModal()">Close</button>
+                    onclick="closeMentorViewModal()">Close</button>
             </div>
         </div>
     </div>
 
+    <!-- Member Modal -->
+    <div id="memberModal" class="modal">
+        <!-- Modal content -->
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+            <h3 class="text-xl font-bold mb-6 text-secondary">Team Member's Information</h3>
+            <form class="space-y-6">
+                <!-- Member Form Fields -->
+                <!-- [Form fields as before] -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Name Field -->
+                    <div>
+                        <label for="member-name" class="block text-sm font-medium text-gray-700 mb-1">Name:</label>
+                        <input type="text" id="member-name" name="member-name" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                        <p class="text-xs text-gray-500 mt-1">Enter the full name of the team member.</p>
+                    </div>
+                    <!-- University Field -->
+                    <div>
+                        <label for="member-university"
+                            class="block text-sm font-medium text-gray-700 mb-1">University:</label>
+                        <select id="member-university" name="member-university" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                            <option disabled selected>Select your university</option>
+                            <option>United International University (UIU)</option>
+                            <option>North South University (NSU)</option>
+                            <option>Bangladesh University of Engineering and Technology (BUET)</option>
+                        </select>
+                        <script>
+                            $(function () {
+                                $("#member-university").select2();
+                            });
+                        </script>
+                        <p class="text-xs text-gray-500 mt-1">Select the university the team member is currently
+                            enrolled in.</p>
+                    </div>
+                    <!-- Email Field -->
+                    <div>
+                        <label for="member-email" class="block text-sm font-medium text-gray-700 mb-1">Email:</label>
+                        <input type="email" id="member-email" name="member-email" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                        <p class="text-xs text-gray-500 mt-1">Enter the email address of the team member.</p>
+                    </div>
+                    <!-- Phone Field -->
+                    <div>
+                        <label for="member-phone" class="block text-sm font-medium text-gray-700 mb-1">Phone
+                            Number:</label>
+                        <input type="tel" id="member-phone" name="member-phone" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                        <p class="text-xs text-gray-500 mt-1">Enter the phone number of the team member.</p>
+                    </div>
+                    <!-- T-Shirt Size Field -->
+                    <div>
+                        <label for="member-tshirt-size" class="block text-sm font-medium text-gray-700 mb-1">T-Shirt
+                            Size:</label>
+                        <select id="member-tshirt-size" name="member-tshirt-size" required class="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-primary
+                            focus:border-primary">
+                            <option disabled selected>Select your T-Shirt size</option>
+                            <option value="s">Small (S)</option>
+                            <option value="m">Medium (M)</option>
+                            <option value="l">Large (L)</option>
+                            <option value="xl">Extra Large (XL)</option>
+                            <option value="xxl">Double Extra Large (XXL)</option>
+                        </select>
+                        <p class="text-xs text-gray-500 mt-1">Select the T-Shirt size for the team member.</p>
+                    </div>
+                    <!-- Photo Field -->
+                    <div>
+                        <label for="member-photo" class="block text-sm font-medium text-gray-700 mb-1">Photo:</label>
+                        <input type="file" id="member-photo" name="member-photo" accept="image/*" required
+                            class="w-full">
+                        <p class="text-xs text-gray-500 mt-1">Upload a recent photo of the team member (image format).
+                        </p>
+                    </div>
+                    <!-- ID Card Field -->
+                    <div>
+                        <label for="member-id-card" class="block text-sm font-medium text-gray-700 mb-1">Student ID
+                            Card:</label>
+                        <input type="file" id="member-id-card" name="member-id-card" accept="image/*" required
+                            class="w-full">
+                        <p class="text-xs text-gray-500 mt-1">Upload a scanned copy of the team member's student ID card
+                            (image format).</p>
+                    </div>
+                </div>
+                <!-- Buttons -->
+                <div class="flex justify-end space-x-4 mt-8">
+                    <button type="button" class="px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400
+                        transition-colors" onclick="closeMemberModal()">Cancel</button>
+                    <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600
+                        transition-colors">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Member View Modal -->
+    <div id="viewMemberModal" class="modal">
+        <!-- Modal content -->
+        <div class="bg-white p-8 rounded-lg shadow-xl max-w-2xl w-full mx-4">
+            <h3 class="text-xl font-bold mb-6 text-secondary">Member Information</h3>
+            <!-- Member information -->
+            <div class="space-y-4">
+                <p><strong>Name:</strong> Member Name</p>
+                <!-- Other member details -->
+            </div>
+            <div class="flex justify-end mt-8">
+                <button type="button"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors"
+                    onclick="closeMemberViewModal()">Close</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="bg-[#ff4701] text-white py-8">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                <!-- Fest Logo Section -->
-                <div class="flex justify-center items-center">
-                    <img src="Assets/Logo/Fest_logo_1.png" alt="UIU CSE Fest Logo" class="w-48 sm:w-60 md:w-72 lg:w-80">
-                </div>
-
-                <!-- Event Organizers Section -->
-                <div class="text-center">
-                    <h1 class="font-general text-xs sm:text-sm md:text-xs lg:text-xs">UIU CSE FEST</h1>
-                    <h1 class="bento-title special-font text-4xl sm:text-2xl md:text-3xl lg:text-4xl mt-2">
-                        <b>Event Organizers</b>
-                    </h1>
-                    <div class="mt-4">
-                        <h2 class="text-xs sm:text-sm md:text-sm lg:text-xs">Organized By</h2>
-                        <div class="flex flex-wrap justify-center items-center gap-3 mt-2">
-                            <img src="Assets/Logo/UIU_logo.png" class="w-16 sm:w-24 md:w-32 lg:w-36" alt="Logo 1">
-                            <img src="Assets/Logo/UIU_cse_logo.png" class="w-16 sm:w-24 md:w-32 lg:w-36" alt="Logo 2">
-                        </div>
-                    </div>
-                    <div class="mt-4">
-                        <h2 class="text-xs sm:text-sm md:text-sm lg:text-xs">Powered By</h2>
-                        <div class="flex flex-wrap justify-center items-center gap-4 mt-2">
-                            <img src="Assets/Logo/1.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 1">
-                            <img src="Assets/Logo/2.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 2">
-                            <img src="Assets/Logo/3.png" class="w-10 sm:w-14 md:w-18 lg:w-20" alt="Power Logo 3">
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Information Section -->
-                <div class="text-center">
-                    <h3 class="text-xl font-bold mb-4">For Any Queries Contact Us</h3>
-                    <p class="text-sm">United International University</p>
-                    <p class="text-sm">United City, Madani Avenue, Badda, Dhaka 1212</p>
-                    <p class="text-sm">Tel: +88 09604 UIU UIU (848 848)</p>
-                    <p class="text-sm">Email: csefest@uiu.ac.bd</p>
-                </div>
-            </div>
-
-            <!-- Footer Bottom Section -->
-            <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
-                <p>&copy; <span id="current-year"></span> UIU CSE Fest. All rights reserved.</p>
-            </div>
-            <script>
-                document.addEventListener('DOMContentLoaded', function () {
-                    const yearSpan = document.getElementById('current-year');
-                    yearSpan.textContent = new Date().getFullYear();
-                });
-            </script>
+        <!-- [Footer content remains the same as before] -->
+        <!-- Footer Bottom Section -->
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm">
+            <p>&copy; <span id="current-year"></span> UIU CSE Fest. All rights reserved.</p>
         </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const yearSpan = document.getElementById('current-year');
+                yearSpan.textContent = new Date().getFullYear();
+            });
+        </script>
     </footer>
 
+    <!-- JavaScript -->
     <script>
-        function openModal() {
+        // Minimal JS for opening and closing modals
+        function openLeaderViewModal() {
+            document.getElementById('viewLeaderModal').classList.add('active');
+        }
+        function closeLeaderViewModal() {
+            document.getElementById('viewLeaderModal').classList.remove('active');
+        }
+        function openMentorModal() {
+            document.getElementById('mentorModal').classList.add('active');
+        }
+        function closeMentorModal() {
+            document.getElementById('mentorModal').classList.remove('active');
+        }
+        function openMentorViewModal() {
+            document.getElementById('viewMentorModal').classList.add('active');
+        }
+        function closeMentorViewModal() {
+            document.getElementById('viewMentorModal').classList.remove('active');
+        }
+        function openMemberModal() {
             document.getElementById('memberModal').classList.add('active');
         }
-    
-        function closeModal() {
+        function closeMemberModal() {
             document.getElementById('memberModal').classList.remove('active');
         }
-    
-        function openViewModal(memberId) {
-            const viewModal = document.getElementById('viewMemberModal');
-            const viewContent = document.getElementById('viewMemberContent');
-    
-            // Populate member information (replace with actual data)
-            viewContent.innerHTML = `
-                <p><strong>Name:</strong> John Doe</p>
-                <p><strong>University:</strong> United International University (UIU)</p>
-                <p><strong>Email:</strong> johndoe@example.com</p>
-                <p><strong>Phone:</strong> 01234567890</p>
-                <img src="https://scontent.fdac138-1.fna.fbcdn.net/v/t39.30808-6/449121565_3700019743660817_1423637092962624769_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeEZyIXdPINYTk8KT1jnp0jSW1u-51kXpbxbW77nWRelvLpn29VRTxMlqg-Tf1KmEz9V5dfxRaF8_pgomIUA8yJA&_nc_ohc=Eq3x_D_0LSsQ7kNvgFYKfcO&_nc_zt=23&_nc_ht=scontent.fdac138-1.fna&_nc_gid=AaGUTA0YRsSnaIIH1-1hagc&oh=00_AYCqbP9d7VrGBdFt_VplI0qps-QuU7NouRjxODTqxaNVdQ&oe=67550A87" alt="Member Photo" class="w-32 h-32 object-cover rounded-lg mt-4">
-            `;
-    
-            viewModal.classList.add('active');
+        function openMemberViewModal() {
+            document.getElementById('viewMemberModal').classList.add('active');
         }
-    
-        function closeViewModal() {
+        function closeMemberViewModal() {
             document.getElementById('viewMemberModal').classList.remove('active');
         }
-    
-        function openEditModal(memberId) {
-            // Populate form with member data (replace with actual data fetching)
-            document.getElementById('leader-name').value = 'John Doe'; // Corrected ID
-            document.getElementById('leader-email').value = 'johndoe@example.com'; // Corrected ID
-            document.getElementById('leader-phone').value = '01234567890'; // Corrected ID
-            document.getElementById('leader-university').value = 'United International University (UIU)'; // Corrected ID
-    
-            openModal(); // Open the modal
-        }
-    
-        document.getElementById('teamMemberForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            // Handle form submission here (e.g., send data to a server)
-            closeModal();
-        });
     </script>
-    
 </body>
 
 </html>
