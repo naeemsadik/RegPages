@@ -6,22 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UIU CSE Fest Registration - Payment</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .step-active {
-            background-color: #3490dc;
-            color: white;
-        }
-
-        .step-completed {
-            background-color: #48bb78;
-            color: white;
-        }
-
-        .step-pending {
-            background-color: #e2e8f0;
-            color: #718096;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body class="bg-gray-50">
@@ -68,7 +53,7 @@
 
         <!-- Payment Section -->
         <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg shadow-md">
-            <h2 class="text-2xl font-bold mb-6 text-secondary">Payment Information</h2>
+            <h2 class="text-2xl font-bold mb-6 text-secondary font-circularweb-book">Payment Information</h2>
             <form class="space-y-6" id="paymentForm">
                 <div>
                     <p class="text-lg mb-4">Registration Fee: <span class="font-bold text-primary">1000 BDT</span></p>
@@ -91,7 +76,7 @@
                 </div>
                 <div class="flex justify-end">
                     <button type="submit" id="submitPayment"
-                        class="bg-blue-500 text-white px-6 py-2 rounded-md hover:bg-blue-600 transition-colors">
+                        class="bg-black text-white px-6 py-2 rounded-md hover:bg-[#ff4701] transition-colors">
                         Complete Registration
                     </button>
                 </div>
