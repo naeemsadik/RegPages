@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Template</title>
+    <style>
+        /* Email-Safe Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .header {
+            background-color: #000000;
+            text-align: center;
+            padding: 20px;
+            color: #ffffff;
+        }
+        .header img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+        .header h1 {
+            font-size: 20px;
+            margin: 0;
+            font-weight: bold;
+        }
+        .content {
+            padding: 20px;
+        }
+        .content h2 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .content p {
+            line-height: 1.6;
+            margin: 10px 0;
+            color: #555;
+        }
+        .content ul {
+            padding-left: 20px;
+            margin: 10px 0;
+            color: #555;
+        }
+        .content ul li {
+            margin-bottom: 8px;
+        }
+        .content a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        .content a:hover {
+            text-decoration: underline;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #000000;
+            color: #ffffff !important;
+            text-decoration: none !important;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .cta-button:hover {
+            background-color: #ff4701;
+        }
+        .footer {
+            background-color: #ff4701;
+            color: #ffffff;
+            padding: 20px;
+        }
+        .footer-section {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .footer img {
+            display: inline-block;
+            margin: 5px;
+            width: 50px;
+        }
+        .footer h3 {
+            margin: 10px 0 5px;
+            font-size: 16px;
+        }
+        .footer p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <img src="../Logo/logo.png" alt="UIU CSE Fest">
+            <h1>UIU CSE Fest Registration</h1>
+        </div>
+
+        <!-- Content -->
+        <div class="content">
+            <h2>Confirmation of Your Sign-Up</h2>
+            <p>Dear <strong>[Lead of Team Name]</strong>,</p>
+            <p>Thank you for signing up for the <strong>Blockchain Olympiad</strong> at the United International University CSE Fest!</p>
+            <p>Your sign-up has been successfully processed. Here are your login details:</p>
+            <ul>
+                <li><strong>Username:</strong> [Email]</li>
+                <li><strong>Password:</strong> [Generated Password]</li>
+            </ul>
+            <p>Please keep this information safe. You can access your team’s details and updates on our website.</p>
+            <p><strong>Registration Link:</strong> <a href="[Registration Link]">[Registration Link]</a></p>
+            <p><strong>Deadline:</strong> [Registration Deadline]</p>
+            <p>We look forward to seeing your team, <strong>[Team Name]</strong>, compete in this exciting event!</p>
+            <a href="[Registration Link]" class="cta-button">Access Your Team Details</a>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <!-- Logo Section -->
+            <div class="footer-section">
+                <img src="../Logo/Fest_logo_1.png" alt="UIU CSE Fest Logo">
+            </div>
+
+            <!-- Event Organizers Section -->
+            <div class="footer-section">
+                <h3>Organized By:</h3>
+                <img src="../Logo/UIU_logo.png" alt="UIU Logo">
+                <img src="../Logo/UIU_cse_logo.png" alt="UIU CSE Logo">
+                <h3>Powered By:</h3>
+                <img src="../Logo/3.png" alt="UIU Computer Club">
+                <img src="../Logo/2.png" alt="UIU Robotics Club">
+                <img src="../Logo/1.png" alt="UIU App Forum">
+            </div>
+
+            <!-- Contact Information -->
+            <div class="footer-section">
+                <h3>Contact Us:</h3>
+                <p>United International University</p>
+                <p>United City, Madani Avenue, Dhaka</p>
+                <p>Email: <a href="mailto:info@uiu.ac.bd" style="color: #ffffff; text-decoration: underline;">info@uiu.ac.bd</a></p>
+                <p>Phone: +8801234567890</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
